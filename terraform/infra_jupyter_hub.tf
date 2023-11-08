@@ -11,7 +11,7 @@ module "jupyterhub_single_user_irsa" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
   version = "~> 5.30"
 
-  role_name = "jupyterhub-single-user"
+  role_name = "jupyterhub-single-user-2"
 
   role_policy_arns = {
     policy = "arn:aws:iam::aws:policy/AdministratorAccess" # Define just the right permission for Jupyter Notebooks
@@ -20,7 +20,7 @@ module "jupyterhub_single_user_irsa" {
   oidc_providers = {
     main = {
       provider_arn               = module.eks.oidc_provider_arn
-      namespace_service_accounts = ["${kubernetes_namespace.jupyterhub.metadata[0].name}:jupyterhub-single-user"]
+      namespace_service_accounts = ["${kubernetes_namespace.jupyterhub.metadata[0].name}:jupyterhub-single-user-2"]
     }
   }
 }
@@ -28,7 +28,7 @@ module "jupyterhub_single_user_irsa" {
 # Airflow Worker Needed Permissions
 resource "kubernetes_service_account_v1" "jupyterhub_single_user_sa" {
   metadata {
-    name        = "jupyterhub-single-user"
+    name        = "jupyterhub-single-user-2"
     namespace   = kubernetes_namespace.jupyterhub.metadata[0].name
     annotations = { "eks.amazonaws.com/role-arn" : module.jupyterhub_single_user_irsa.iam_role_arn }
   }
@@ -38,7 +38,7 @@ resource "kubernetes_service_account_v1" "jupyterhub_single_user_sa" {
 
 resource "kubernetes_secret_v1" "jupyterhub_single_user" {
   metadata {
-    name      = "jupyterhub-single-user-secret"
+    name      = "jupyterhub-single-user-2-secret"
     namespace = kubernetes_namespace.jupyterhub.metadata[0].name
     annotations = {
       "kubernetes.io/service-account.name"      = kubernetes_service_account_v1.jupyterhub_single_user_sa.metadata[0].name
