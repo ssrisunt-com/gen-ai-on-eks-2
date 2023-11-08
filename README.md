@@ -69,13 +69,13 @@ You should see output similar to:
 
 ```bash
 NAME                                        STATUS   ROLES    AGE     VERSION
-ip-10-8-10-118.us-west-2.compute.internal   Ready    <none>   50m   v1.27.5-eks-43840fb
-ip-10-8-17-213.us-west-2.compute.internal   Ready    <none>   51m   v1.27.5
-ip-10-8-17-85.us-west-2.compute.internal    Ready    <none>   51m   v1.27.5
-ip-10-8-21-138.us-west-2.compute.internal   Ready    <none>   51m   v1.27.5
-ip-10-8-22-37.us-west-2.compute.internal    Ready    <none>   51m   v1.27.5
-ip-10-8-30-194.us-west-2.compute.internal   Ready    <none>   22m   v1.27.5-eks-43840fb
-ip-10-8-32-55.us-west-2.compute.internal    Ready    <none>   24m   v1.27.5-eks-43840fb
+ip-10-8-10-118.us-east-1.compute.internal   Ready    <none>   50m   v1.27.5-eks-43840fb
+ip-10-8-17-213.us-east-1.compute.internal   Ready    <none>   51m   v1.27.5
+ip-10-8-17-85.us-east-1.compute.internal    Ready    <none>   51m   v1.27.5
+ip-10-8-21-138.us-east-1.compute.internal   Ready    <none>   51m   v1.27.5
+ip-10-8-22-37.us-east-1.compute.internal    Ready    <none>   51m   v1.27.5
+ip-10-8-30-194.us-east-1.compute.internal   Ready    <none>   22m   v1.27.5-eks-43840fb
+ip-10-8-32-55.us-east-1.compute.internal    Ready    <none>   24m   v1.27.5-eks-43840fb
 ```
 
 Validade if all Pods are `Running` and in `Ready` state.

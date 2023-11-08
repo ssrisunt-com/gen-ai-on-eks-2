@@ -19,13 +19,13 @@ variable "db_private_subnets" {
 variable "name" {
   description = "Name to be added to the modules and resources."
   type        = string
-  default     = "gen-ai-eks"
+  default     = "gen-ai-eks-2"
 }
 
 variable "cluster_version" {
   description = "Amazon EKS Cluster version."
   type        = string
-  default     = "1.27"
+  default     = "1.28"
 }
 
 variable "jupyter_hub_values_path" {
