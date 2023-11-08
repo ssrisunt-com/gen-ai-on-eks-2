@@ -10,7 +10,7 @@ module "karpenter_policy" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-policy"
   version = "~> 5.20"
 
-  name        = "KarpenterS3ReadWritePolicy"
+  name        = "KarpenterS3ReadWritePolicy-2"
   description = "IAM Policy to allow read and write in a S3 bucket for karpenter nodes"
 
   policy = jsonencode(
